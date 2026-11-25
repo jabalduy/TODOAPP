@@ -7,4 +7,10 @@ type UsersHTTPHandler struct {
 type UserService interface {
 }
 
-func NewUsersHTTPHandler()
+func NewUsersHTTPHandler(
+	userService UserService,
+) *UsersHTTPHandler {
+	return &UsersHTTPHandler{
+		usersService: userService,
+	}
+}
